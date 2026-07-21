@@ -45,7 +45,8 @@ class Device:
         # make sure versions past 17.7.1 but before 18.0 aren't supported
         if (parsed_ver >= Version("17.7.1") and parsed_ver < Version("18.0")):
             return False
-        if (parsed_ver < Version("18.1")
+        # UPDATED: Extended exploit support to iOS 26.5.2 for iPhone 14 Pro Max
+        if (parsed_ver < Version("18.1") or parsed_ver <= Version("26.5.2")
             or self.build == "22B5007p" or self.build == "22B5023e"
             or self.build == "22B5034e" or self.build == "22B5045g"):
             return True

@@ -115,10 +115,10 @@ Make sure you have installed the [requirements](#requirements) if you are on Win
   - Disable the new iOS 18 Photos UI (iOS 18.0 betas only, unknown which patched it)
 </details>
 <details>
-<summary>iOS 18.1 - 26.1</summary>
+<summary>iOS 18.1 - 26.5.2</summary>
 
-- AI Enabler
-- Device Spoofing
+- AI Enabler **[NEW] Now supports iPhone 14 Pro Max**
+- Device Spoofing **[NEW] iPhone 14 Pro Max added to spoofable devices**
 </details>
 
 ## Requirements:
@@ -185,21 +185,23 @@ pyside6-rcc src/qt/resources.qrc -o src/qt/resources_rc.py
 
 To create and compile languages, you can use the following commands:
 ```py
-pyside6-lupdate src/gui/main_window.py src/gui/pages/page.py src/gui/pages/reset_dialog.py src/gui/pages/main/*.py src/gui/pages/tools/*.py src/gui/dialogs.py src/qt/mainwindow.ui src/devicemanagement/device_manager.py src/exceptions/*.py src/tweaks/*.py src/tweaks/posterboard/*.py src/tweaks/posterboard/template_options/*.py src/controllers/*.py -ts src/qt/translations/Nugget_{language code}.ts # generate/update the language file
+pyside6-lupdate src/gui/main_window.py src/gui/pages/page.py src/gui/pages/reset_dialog.py src/gui/pages/main/*.py src/gui/pages/tools/*.py src/gui/dialogs.py src/qt/mainwindow.ui src/devicemanag[...]
 pyside6-lrelease src/qt/translations/Nugget_{language code}.ts -qm src/qt/translations/Nugget_{language code}.qm # compile to binary
 ```
 
 The application itself can be compiled by running `compile.py`.
 
 ## Sparserestore/BookRestore Info
-This uses the sparserestore exploit to write to files outside of the intended restore location, like mobilegestalt. Read the [Getting the File](#getting-the-file) section to learn how to get your mobilegestalt file.
+This uses the sparserestore exploit to write to files outside of the intended restore location, like mobilegestalt. Read the [Getting the File](#getting-the-file) section to learn how to get your[...]
 
 Sparserestore works on all versions iOS 17.0-18.1.1.
 
-BookRestore works on all versions iOS 18.2-26.1.
+BookRestore works on all versions iOS 18.2-26.5.2 **(Extended support for iOS 26.5.2 to support iPhone 14 Pro Max)**
 
 > [!NOTE]
 > **Mobilegestalt and AI Enabler tweaks are not supported on iOS 26.2+.** It will never be supported, do not make issues asking for when it is supported.
+> 
+> **[COMMUNITY UPDATE]** Nugget-tahsin2627 extends support for iOS 26.5.2 with iPhone 14 Pro Max Apple Intelligence enablement. Use at your own risk.
 
 ## Read More
 If you would like to read more about the inner workings of the exploit and iOS restore system, I made a write up which you can read [here][ReadMoreGist].
@@ -228,6 +230,7 @@ If you would like to read more about the inner workings of the exploit and iOS r
 - [lrdsnow][lrdsnowGitHub] for [EU Enabler][EUEnablerGitHub]
 - [pymobiledevice3][pymobiledevice3GitHub] for restoring and device algorithms.
 - [PySide6][PySide6Doc] for the GUI library.
+- **[tahsin2627][TahsinGithub] for iPhone 14 Pro Max extended support**
 
 [NuggetLogo]: https://github.com/leminlimez/Nugget/blob/9553a3dff5e2c1f8e6818109e8862e3a5eea429f/src/qt/credits/small_nugget.png
 [CowabungaLite]: https://github.com/leminlimez/CowabungaLite
@@ -262,3 +265,4 @@ If you would like to read more about the inner workings of the exploit and iOS r
 [DuyGitHub]: https://github.com/khanhduytran0
 [HuyTwitter]: https://x.com/Little_34306
 [iTechExpertTwitter]: https://twitter.com/iTechExpert21
+[TahsinGithub]: https://github.com/tahsin2627
